@@ -66,7 +66,7 @@ public class DesginationController {
 	@CrossOrigin
 	@DeleteMapping(RestAPICommonConstants.REST_API_DES_BASE_URL + "delete/{id}")
 	public ResponseEntity<Desgination> delete(@PathVariable Integer id) {
-		logger.info("Getting desgination information by id to delete {} :" + id);
+		logger.info("Getting desgination information by id to delete {}  :" + id);
 		desginationService.deleteById(id);
 		return ResponseEntity.accepted().build();
 	}
