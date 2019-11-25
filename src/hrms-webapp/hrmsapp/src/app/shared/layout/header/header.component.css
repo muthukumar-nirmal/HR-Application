@@ -1,0 +1,10 @@
+.brand-logo{
+    float: left;
+    display: block;
+    padding: 8px 20px 12px;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1;
+    color: #ffffff;
+}
+
