@@ -6,7 +6,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.changepond.hrms.domain.User;
+import com.changepond.hrms.domain.Employee;
+import com.changepond.hrms.services.EmployeeService;
 
 
 /**
@@ -19,11 +20,11 @@ import com.changepond.hrms.domain.User;
 public class AppUserDetailsService implements UserDetailsService {
 
 	@Autowired
-	UserServiceImpl userService;
+	EmployeeService userService;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userService.find(username);
+		Employee user = userService.findByEmail(username);
 		if("ACTIVE".equals(user.getStatus())){
 			return user;
 		}
