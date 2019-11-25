@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.changepond.atrs.util;
+package com.changepond.hrms.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;

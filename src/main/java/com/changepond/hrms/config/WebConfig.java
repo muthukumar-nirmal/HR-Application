@@ -16,8 +16,8 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.changepond.atrs.util.CommonConstants;
 import com.changepond.hrms.serviceimpl.AppUserDetailsService;
+import com.changepond.hrms.util.CommonConstants;
 
 
 /**

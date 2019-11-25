@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.changepond.atrs.util.RestAPICommonConstants;
 import com.changepond.hrms.domain.Department;
 import com.changepond.hrms.services.DepartmentService;
+import com.changepond.hrms.util.RestAPICommonConstants;
 
 /**
  * @author muthukumar.m
