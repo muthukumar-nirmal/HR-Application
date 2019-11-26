@@ -42,9 +42,6 @@ public class AccountController {
 	@CrossOrigin
     @PostMapping(RestAPICommonConstants.REST_API_ACCOUNT_BASE_URL + "change-password")
     public void changePassword(@RequestBody PasswordChangeDTO passwordChangeDto) throws IOException {
-		if(passwordChangeDto.getNewPassword() == null && passwordChangeDto.getNewPassword().isEmpty()) {
-			throw new IOException("Invalid exception");
-		}
     	employeeService.changePassword(passwordChangeDto.getCurrentPassword(), passwordChangeDto.getNewPassword());
     }
 

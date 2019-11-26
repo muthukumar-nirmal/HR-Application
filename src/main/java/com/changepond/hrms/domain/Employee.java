@@ -15,9 +15,6 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -25,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @Entity
 @Table(name = "tbl_employee")
-public class Employee extends AuditModel implements UserDetails {
+public class Employee extends AuditModel {
 
 	public static enum Role{ADMIN, USER }
 	
@@ -88,39 +85,6 @@ public class Employee extends AuditModel implements UserDetails {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Desgination desgination;
-
-    
-    @JsonIgnore
-	@Override
-	public boolean isEnabled() {
-		return true;
-	}
-
-	@JsonIgnore
-	@Override
-	public boolean isCredentialsNonExpired() {
-		return true;
-	}
-
-	@JsonIgnore
-	@Override
-	public boolean isAccountNonLocked() {
-		return true;
-	}
-
-	@JsonIgnore
-	@Override
-	public boolean isAccountNonExpired() {
-		return true;
-	}
-
-	@JsonIgnore
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		Collection<GrantedAuthority> authorities = new ArrayList<>();
-		authorities.add(new SimpleGrantedAuthority(role));
-		return authorities;
-	}
 
 	public int getId() {
 		return id;

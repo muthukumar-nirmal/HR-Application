@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.changepond.hrms.domain.Employee;
@@ -26,8 +25,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	private EmployeeRepository employeeRepository;
 
 
-	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	//@Autowired
+	//private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Override
 	public List<Employee> getAll() {
@@ -36,8 +35,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public Employee create(Employee employee) {
-		employee.setPassword(bCryptPasswordEncoder.encode(employee.getPassword()));
-		employee.setConfirmPassword(bCryptPasswordEncoder.encode(employee.getPassword()));
+		//employee.setPassword(bCryptPasswordEncoder.encode(employee.getPassword()));
+		//employee.setConfirmPassword(bCryptPasswordEncoder.encode(employee.getPassword()));
 		employee.setStatus("ACTIVE");
 		employee.setCreatedAt(new Date());
 		employee.setUpdatedAt(new Date());
