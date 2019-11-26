@@ -25,5 +25,7 @@ public interface EmployeeService {
 	public Employee findByEmail(String email);
 
 	public void deleteById(int id);
+	
+	public void changePassword(String currentClearTextPassword, String newPassword);
 
 }
