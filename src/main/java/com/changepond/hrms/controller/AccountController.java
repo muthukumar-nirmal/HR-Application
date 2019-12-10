@@ -9,11 +9,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.changepond.hrms.domain.Employee;
 import com.changepond.hrms.dto.PasswordChangeDTO;
 import com.changepond.hrms.services.EmployeeService;
 import com.changepond.hrms.util.RestAPICommonConstants;
@@ -44,5 +46,14 @@ public class AccountController {
     public void changePassword(@RequestBody PasswordChangeDTO passwordChangeDto) throws IOException {
     	employeeService.changePassword(passwordChangeDto.getCurrentPassword(), passwordChangeDto.getNewPassword());
     }
+	
+
+	@CrossOrigin
+	@PostMapping(RestAPICommonConstants.REST_API_ACCOUNT_BASE_URL + "forgot-password")
+	public void forgotPassword(@PathVariable("email") String email) {
+		Employee employee = employeeService.findByEmail(email);
+		if(employee != null) {
+		}
+	}
 
 }
