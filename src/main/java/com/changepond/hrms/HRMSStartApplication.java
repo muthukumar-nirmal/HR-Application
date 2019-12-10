@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class HRMSStartApplication {
-	
 	public static void main(String[] args) {
 		SpringApplication.run(HRMSStartApplication.class, args);
 	}
